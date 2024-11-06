@@ -1,0 +1,22 @@
+{
+  "name": "dotenv-custom",
+  "version": "1.0.0",
+  "main": "./build/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "execute": "npm run build && node ./build/src/index.js",
+    "start": "node ./build/src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.8.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
