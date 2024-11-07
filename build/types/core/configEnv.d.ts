@@ -1,6 +1,5 @@
-import * as T from "../types";
+import * as T from "../../types";
 declare class CustomEnv {
-    #private;
     readonly dotenv: {
         [key: T.EnvName]: any;
     };
@@ -8,7 +7,7 @@ declare class CustomEnv {
         [key: T.EnvName]: any;
     };
     envStruct: T.EnvStruct;
-    constructor(config?: T.Config);
+    constructor(config: T.Config);
     private envOnly;
     private filterEnv;
 }

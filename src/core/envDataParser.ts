@@ -1,5 +1,5 @@
 
-import * as T from "../types";
+import * as T from "../../types";
 import TypeParser from "./typeParser";
 
 export default class EnvDataParser{

@@ -95,7 +95,7 @@ class EnvFileStructuring {
     envTagsConfig(envName, envComponents) {
         for (const tag of envComponents) {
             const [tagName, tagValue] = this.tagValidator(tag);
-            __classPrivateFieldGet(this, _EnvFileStructuring_customEnv, "f").envStruct[envName].envTags = { [tagName]: tagValue };
+            __classPrivateFieldGet(this, _EnvFileStructuring_customEnv, "f").envStruct[envName].envTags[tagName] = tagValue;
         }
     }
     tagValidator(tag) {

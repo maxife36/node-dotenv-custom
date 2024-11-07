@@ -1,5 +1,5 @@
 import CustomEnv from "./configEnv";
-import * as T from "../types";
+import * as T from "../../types";
 import * as C from "./constants";
 
 export default class EnvFileStructuring {
@@ -75,7 +75,7 @@ export default class EnvFileStructuring {
     for (const tag of envComponents) {
       const [tagName, tagValue] = this.tagValidator(tag);
 
-      this.#customEnv.envStruct[envName].envTags = { [tagName]: tagValue };
+      this.#customEnv.envStruct[envName].envTags[tagName] = tagValue
     }
   }
 
