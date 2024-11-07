@@ -34,7 +34,7 @@ function writeExampleEnvFiles(envPath, exampleEnvPath, envStruct) {
         var _a;
         const trimmedLine = line.trim();
         if (trimmedLine.startsWith("#") || trimmedLine.startsWith(";")) {
-            appendLineToFile(envPath, trimmedLine);
+            appendLineToFile(exampleEnvPath, trimmedLine + "\n");
         }
         else if (trimmedLine) {
             const regex = /^([^=]*)/;
@@ -59,9 +59,7 @@ function writeExampleEnvFiles(envPath, exampleEnvPath, envStruct) {
             appendLineToFile(exampleEnvPath, envExampleLine);
         }
     });
-    rl.on("close", () => {
-        console.log(`Lectura del archivo ${envPath} completada.`);
-    });
+    rl.on("close", () => { });
     rl.on("error", (err) => {
         console.error("Error al leer el archivo:", err);
     });
@@ -71,15 +69,13 @@ function appendLineToFile(filename, line) {
         if (err) {
             console.error("Error escribiendo en el archivo:", err);
         }
-        else {
-            console.log("Línea añadida con éxito.");
-        }
     });
 }
 function addExamplePrefix(filePath) {
     const dir = path_1.default.dirname(filePath);
     const ext = path_1.default.extname(filePath);
     const baseName = path_1.default.basename(filePath, ext);
-    return path_1.default.join(dir, `example${baseName}${ext}`);
+    const exampleFileName = ext ? `example.${baseName}${ext}` : `example.${baseName}`;
+    return path_1.default.join(dir, exampleFileName);
 }
 //# sourceMappingURL=dotenvExample.js.map

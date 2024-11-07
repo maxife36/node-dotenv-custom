@@ -19,9 +19,5 @@ function customEnvInit(config) {
     (0, dotenvExample_1.default)(customOption, customEnv.envStruct);
     return customEnv.env;
 }
-customEnvInit({
-    path: [envPath, otherEnvPath],
-    exampleEnvPath: exampleEnvPath
-});
 module.exports = customEnvInit;
 //# sourceMappingURL=index.js.map
