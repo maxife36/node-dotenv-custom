@@ -13,7 +13,7 @@
             ],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "compile",
-            "program": "${workspaceFolder}\\build\\src\\index.js",
+            "program": "${workspaceFolder}\\build\\index.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
