@@ -3,10 +3,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const configEnv_1 = __importDefault(require("./configEnv"));
+const path_1 = __importDefault(require("path"));
+const configEnv_1 = __importDefault(require("./core/configEnv"));
+const dotenvExample_1 = __importDefault(require("./utils/dotenvExample"));
+const otherEnvPath = path_1.default.resolve("./types/other.env");
+const envPath = path_1.default.resolve(process.cwd(), ".env");
+const exampleEnvPath = path_1.default.resolve(process.cwd(), "example.env");
+const defaultConfig = {
+    path: envPath,
+    exampleEnvPath: exampleEnvPath
+};
 function customEnvInit(config) {
-    const customEnv = new configEnv_1.default(config);
+    const customOption = Object.assign(Object.assign({}, defaultConfig), config);
+    const customEnv = new configEnv_1.default(customOption);
+    (0, dotenvExample_1.default)(customOption, customEnv.envStruct);
     return customEnv.env;
 }
+customEnvInit({
+    path: [envPath, otherEnvPath],
+    exampleEnvPath: exampleEnvPath
+});
 module.exports = customEnvInit;
 //# sourceMappingURL=index.js.map

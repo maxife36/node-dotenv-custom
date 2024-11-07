@@ -1,4 +1,5 @@
 export interface Config {
-    path?: string | string[];
+    path: string | string[]
+    exampleEnvPath:string
   }
   
