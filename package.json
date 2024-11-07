@@ -1,6 +1,6 @@
 {
   "name": "dotenv-custom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./build/index.js",
   "types": "./build/types/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
     "execute": "npm run build && node ./build/index.js"
   },
   "files": [
-    "build"                          
+    "build"
   ],
   "keywords": [],
   "author": "Fenoglio Maximiliano Martin",
