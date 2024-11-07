@@ -1,7 +1,8 @@
 import CustomENV from "./configEnv"
+import * as T from "../types";
 
-const instance = CustomENV.init()
 
-const customeEnv = instance.filterEnv()
-
-console.log(customeEnv);
+export default function customEnvInit(config?: T.Config){
+    const customEnv =  new CustomENV(config)
+    return customEnv.env
+}
