@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import readline from "readline";
-import * as T from "../../types";
+import * as T from "../types";
 
 export default function dotenvExampleBuild(
   config: T.Config,
@@ -29,6 +29,10 @@ function writeExampleEnvFiles(
   if (!fs.existsSync(envPath)) {
     console.error(`El archivo ${envPath} no existe.`);
     return;
+  }
+
+  if (fs.existsSync(exampleEnvPath)) {
+    fs.unlinkSync(exampleEnvPath);
   }
 
   const rl = readline.createInterface({

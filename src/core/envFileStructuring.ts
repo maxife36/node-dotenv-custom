@@ -1,5 +1,5 @@
 import CustomEnv from "./configEnv";
-import * as T from "../../types";
+import * as T from "../types";
 import * as C from "./constants";
 
 export default class EnvFileStructuring {

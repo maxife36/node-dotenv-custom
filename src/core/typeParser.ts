@@ -1,4 +1,4 @@
-import * as T from "../../types";
+import * as T from "../types";
 
 export default class TypeParser{
     public static parseBoolean(envInfo: T.EnvInfo) {
