@@ -26,6 +26,9 @@ function writeExampleEnvFiles(envPath, exampleEnvPath, envStruct) {
         console.error(`El archivo ${envPath} no existe.`);
         return;
     }
+    if (fs_1.default.existsSync(exampleEnvPath)) {
+        fs_1.default.unlinkSync(exampleEnvPath);
+    }
     const rl = readline_1.default.createInterface({
         input: fs_1.default.createReadStream(envPath),
         terminal: false,
