@@ -8,7 +8,6 @@ export default class TagProcessor{
 
     constructor(customEnv : CustomEnv){
       this.#customEnv = customEnv
-      this.init()
     }
       
     public init() {

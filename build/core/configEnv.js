@@ -4,10 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
-const path_1 = __importDefault(require("path"));
 const envFileStructuring_1 = __importDefault(require("./envFileStructuring"));
 const tagProcessor_1 = __importDefault(require("./tagProcessor"));
-const envPath = path_1.default.resolve(process.cwd(), ".env");
 const initialEnv = Object.assign({}, process.env);
 class CustomEnv {
     constructor(config) {

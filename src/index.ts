@@ -1,9 +1,8 @@
 import path from "path";
 import CustomENV from "./core/configEnv"
 import dotenvExampleBuild from "./utils/dotenvExample";
-import * as T from "../types";
+import * as T from "./types";
 
-const otherEnvPath = path.resolve("./types/other.env");
 const envPath = path.resolve(process.cwd(), ".env");
 const exampleEnvPath = path.resolve(process.cwd(),"example.env");
 
@@ -23,4 +22,4 @@ function customEnvInit(config?: T.Config){
     return customEnv.env
 }
 
-module.exports = customEnvInit
+export = customEnvInit

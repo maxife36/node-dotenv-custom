@@ -45,7 +45,6 @@ class TagProcessor {
     constructor(customEnv) {
         _TagProcessor_customEnv.set(this, void 0);
         __classPrivateFieldSet(this, _TagProcessor_customEnv, customEnv, "f");
-        this.init();
     }
     init() {
         for (const envName in __classPrivateFieldGet(this, _TagProcessor_customEnv, "f").envStruct) {

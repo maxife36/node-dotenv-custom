@@ -1,10 +1,7 @@
 import dotenv from "dotenv";
-import path from "path";
-import * as T from "../../types";
+import * as T from "../types";
 import EnvFileStructuring from "./envFileStructuring";
 import TagProcessor from "./tagProcessor";
-
-const envPath = path.resolve(process.cwd(), ".env");
 
 const initialEnv = { ...process.env };
 

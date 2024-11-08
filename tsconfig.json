@@ -13,6 +13,6 @@
     "declaration": true,  // Esto habilita la generación de archivos .d.ts
     "declarationDir": "./build/types"
   },
-  "include": ["src/**/*", "types/**/*.d.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "build"]
 }
