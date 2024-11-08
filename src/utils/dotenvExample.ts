@@ -8,7 +8,11 @@ export default function dotenvExampleBuild(
   envStruct: T.EnvStruct
 ) {
   if (typeof config.path === "string") {
-    writeExampleEnvFiles(config.path, config.exampleEnvPath, envStruct);
+    const exampleEnvPath = config.exampleEnvPath
+      ? config.exampleEnvPath
+      : addExamplePrefix(config.path);
+      
+    writeExampleEnvFiles(config.path, exampleEnvPath, envStruct);
   } else if (Array.isArray(config.path)) {
     for (const envPath of config.path) {
       const exampleEnvPath = addExamplePrefix(envPath);
@@ -44,7 +48,7 @@ function writeExampleEnvFiles(
     const trimmedLine = line.trim();
 
     if (trimmedLine.startsWith("#") || trimmedLine.startsWith(";")) {
-      appendLineToFile(exampleEnvPath, trimmedLine+"\n");
+      appendLineToFile(exampleEnvPath, trimmedLine + "\n");
     } else if (trimmedLine) {
       const regex = /^([^=]*)/;
       const match = regex.exec(trimmedLine);
@@ -94,7 +98,9 @@ function addExamplePrefix(filePath: string) {
   const ext = path.extname(filePath);
   const baseName = path.basename(filePath, ext);
 
-  const exampleFileName = ext?  `example.${baseName}${ext}`:`example.${baseName}`
+  const exampleFileName = ext
+    ? `example.${baseName}${ext}`
+    : `example.${baseName}`;
 
   return path.join(dir, exampleFileName);
 }
