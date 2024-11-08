@@ -6,10 +6,8 @@ const path_1 = __importDefault(require("path"));
 const configEnv_1 = __importDefault(require("./core/configEnv"));
 const dotenvExample_1 = __importDefault(require("./utils/dotenvExample"));
 const envPath = path_1.default.resolve(process.cwd(), ".env");
-const exampleEnvPath = path_1.default.resolve(process.cwd(), "example.env");
 const defaultConfig = {
-    path: envPath,
-    exampleEnvPath: exampleEnvPath
+    path: envPath
 };
 function customEnvInit(config) {
     const customOption = Object.assign(Object.assign({}, defaultConfig), config);

@@ -8,10 +8,14 @@ export default function dotenvExampleBuild(
   envStruct: T.EnvStruct
 ) {
   if (typeof config.path === "string") {
-    const exampleEnvPath = config.exampleEnvPath
-      ? config.exampleEnvPath
-      : addExamplePrefix(config.path);
-      
+    let exampleEnvPath = config.exampleEnvPath
+
+    if (!exampleEnvPath) {
+      exampleEnvPath = addExamplePrefix(config.path)
+    }else if(!path.isAbsolute(exampleEnvPath)){
+      exampleEnvPath = path.resolve(process.cwd(),exampleEnvPath);
+    }
+    
     writeExampleEnvFiles(config.path, exampleEnvPath, envStruct);
   } else if (Array.isArray(config.path)) {
     for (const envPath of config.path) {

@@ -9,9 +9,13 @@ const fs_1 = __importDefault(require("fs"));
 const readline_1 = __importDefault(require("readline"));
 function dotenvExampleBuild(config, envStruct) {
     if (typeof config.path === "string") {
-        const exampleEnvPath = config.exampleEnvPath
-            ? config.exampleEnvPath
-            : addExamplePrefix(config.path);
+        let exampleEnvPath = config.exampleEnvPath;
+        if (!exampleEnvPath) {
+            exampleEnvPath = addExamplePrefix(config.path);
+        }
+        else if (!path_1.default.isAbsolute(exampleEnvPath)) {
+            exampleEnvPath = path_1.default.resolve(process.cwd(), exampleEnvPath);
+        }
         writeExampleEnvFiles(config.path, exampleEnvPath, envStruct);
     }
     else if (Array.isArray(config.path)) {
