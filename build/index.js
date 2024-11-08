@@ -2,11 +2,9 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = __importDefault(require("path"));
 const configEnv_1 = __importDefault(require("./core/configEnv"));
 const dotenvExample_1 = __importDefault(require("./utils/dotenvExample"));
-const otherEnvPath = path_1.default.resolve("./types/other.env");
 const envPath = path_1.default.resolve(process.cwd(), ".env");
 const exampleEnvPath = path_1.default.resolve(process.cwd(), "example.env");
 const defaultConfig = {

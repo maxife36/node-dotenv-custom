@@ -1,4 +1,4 @@
-import * as T from "../../types";
+import * as T from "../types";
 declare class CustomEnv {
     readonly dotenv: {
         [key: T.EnvName]: any;
